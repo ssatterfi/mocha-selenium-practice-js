@@ -14,7 +14,7 @@ describe('Todo Test Suite 1', function () {
 
     beforeEach(function () {
         //Launch the browser
-        let driver = new Builder()
+        driver = new Builder()
             .forBrowser(browser)
             .usingServer(gridURL)
             .build()
@@ -31,8 +31,6 @@ describe('Todo Test Suite 1', function () {
     //it block
     it('TC_TODOS_001.1', async function () {
 
-        //Launch the browser 
-        let driver = await new Builder().forBrowser("firefox").build()
 
         //naviate to our application
         await driver.get("https://lambdatest.github.io/sample-todo-app/");
@@ -54,12 +52,8 @@ describe('Todo Test Suite 1', function () {
             todoText.should.equal(("Learn Selenium"));
         }
         finally {
-            //close the browser
-            // await driver.quit();
-            console.log("Assert failed. TodoText was not as expected");
+
         }
-
-
 
     });
 
