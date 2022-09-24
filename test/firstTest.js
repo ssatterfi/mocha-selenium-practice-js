@@ -1,15 +1,35 @@
 const chrome = require("selenium-webdriver/chrome");
-const { Builder, By, Key, until, WebDriver } = require('selenium-webdriver');
+const env = require('../capabilities');
+const { Builder, By, Key, until, WebDriver, WebElement } = require('selenium-webdriver');
 const should = require("chai").should();
-const testname = 'defaulttest';
-const server = 'http://localhost:4444/wd/hub/';
-let browser = 'chrome';
+var driver;
+
 
 //describe block
-describe('Add todo tests', function () {
+describe('Todo Test Suite 1', function () {
+
+    const browser = env.capabilities.browserName;
+    const gridURL = env.capabilities.server;
+
+
+    beforeEach(function () {
+        //Launch the browser
+        let driver = new Builder()
+            .forBrowser(browser)
+            .usingServer(gridURL)
+            .build()
+
+    });
+    this.afterEach(async function () {
+
+        //close the browser
+        await driver.quit();
+        driver = '';
+
+    });
 
     //it block
-    it('successfully add a todo application', async function () {
+    it('TC_TODOS_001.1', async function () {
 
         //Launch the browser 
         let driver = await new Builder().forBrowser("firefox").build()
@@ -29,11 +49,17 @@ describe('Add todo tests', function () {
             });
 
         //assert using chai should
-        todoText.should.equal(("Learn Selenium"));
+
+        try {
+            todoText.should.equal(("Learn Selenium"));
+        }
+        finally {
+            //close the browser
+            // await driver.quit();
+            console.log("Assert failed. TodoText was not as expected");
+        }
 
 
-        //close the browser
-        await driver.quit();
 
     });
 

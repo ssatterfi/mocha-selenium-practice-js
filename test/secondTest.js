@@ -1,18 +1,37 @@
 const chrome = require("selenium-webdriver/chrome");
-const { Builder, By, Key, until, WebDriver } = require('selenium-webdriver');
+const env = require('../capabilities');
+const { Builder, By, Key, until, WebDriver, WebElement } = require('selenium-webdriver');
 const should = require("chai").should();
-const testname = 'defaulttest';
-const server = 'http://localhost:4444/wd/hub/';
-let browser = 'chrome';
+var driver;
+
 
 //describe block
-describe('Add another todo tests', function () {
+describe('Todo Test Suite 2', function () {
+
+    const browser = env.capabilities.browserName;
+    const gridURL = env.capabilities.server;
+
+
+    beforeEach(function () {
+        //Launch the browser
+
+        let driver = new Builder()
+            .forBrowser(browser)
+            .usingServer(gridURL)
+            .build()
+
+    });
+
+    this.afterEach(function () {
+
+        //close the browser
+        driver.quit();
+        driver = '';
+
+    });
 
     //it block
-    it('successfully add another todo application', async function () {
-
-        //Launch the browser 
-        let driver = await new Builder().forBrowser("firefox").build()
+    it('TC_TODOS_002.2', async function () {
 
         //navigate to our application
         await driver.get("https://lambdatest.github.io/sample-todo-app/");
@@ -28,15 +47,22 @@ describe('Add another todo tests', function () {
                 return value;
             });
 
-        //assert using chai should
-        todoText.should.equal(("Learn Selenium"));
 
-        //close the browser
-        await driver.quit();
+        //assert using chai should
+        try {
+            todoText.should.equal(("Learn Selenium"));
+        }
+        finally {
+            //close the browser
+            //await driver.quit();
+            console.log("Assert failed. TodoText was not as expected");
+        }
+
+
 
     });
     //it block
-    it('adding a new test for reporting', async function () {
+    it('TC_TODOS_002.3', async function () {
 
         //Launch the browser 
         let driver = await new Builder().forBrowser("firefox").build()
@@ -56,12 +82,19 @@ describe('Add another todo tests', function () {
             });
 
         //assert using chai should
-        todoText.should.equal(("C#"));
+        try {
+            todoText.should.equal(("C#"));
+        }
+        finally {
+            //close the browser
+            // await driver.quit();
+            console.log("Assert failed. TodoText was not as expected");
+        }
 
-        //close the browser
-        await driver.quit();
+
 
     });
+
 
 });
 
