@@ -51,9 +51,7 @@ describe('Todo Test Suite 2', function () {
         try {
             todoText.should.equal(("Learn Selenium"));
         }
-        catch {
-            console.log("Assert failed. TodoText was not as expected");
-
+        finally {
         }
 
     });
