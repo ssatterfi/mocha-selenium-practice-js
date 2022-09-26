@@ -1,0 +1,141 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-09-26T22:09:12.522Z",
+    "end": "2022-09-26T22:09:14.579Z",
+    "duration": 2057,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fe773812-df05-4aa4-a668-92659bed2d77",
+      "title": "",
+      "fullFile": "D:\\Repo\\javascirpt_mocha_selenium\\Test\\HomePage.js",
+      "file": "\\Test\\HomePage.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "871abcd2-beef-4751-950f-2402c9b81c65",
+          "title": "Home Page Test Suite",
+          "fullFile": "D:\\Repo\\javascirpt_mocha_selenium\\Test\\HomePage.js",
+          "file": "\\Test\\HomePage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Home Page Test Suite\"",
+              "fullTitle": "Home Page Test Suite \"before all\" hook in \"Home Page Test Suite\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver = global.driver;",
+              "err": {},
+              "uuid": "d78a15e5-e3c3-499e-8ccd-a1008922a53c",
+              "parentUUID": "871abcd2-beef-4751-950f-2402c9b81c65",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"Home Page Test Suite\"",
+              "fullTitle": "Home Page Test Suite \"after all\" hook in \"Home Page Test Suite\"",
+              "timedOut": false,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver.quit()",
+              "err": {},
+              "uuid": "61aae9ca-590b-4bee-891f-1d049ee899a7",
+              "parentUUID": "871abcd2-beef-4751-950f-2402c9b81c65",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "TC_HomePage_001",
+              "fullTitle": "Home Page Test Suite TC_HomePage_001",
+              "timedOut": false,
+              "duration": 2053,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"https://www.medishare.com/\");\n        //Validate Page Title\n        let pageTitle = await driver.getTitle();\n        try {\n            pageTitle.should.equal((PAGE_TITLE));\n        }\n        finally {\n        }",
+              "err": {},
+              "uuid": "91661d75-22c4-426b-8df1-08ad3471206c",
+              "parentUUID": "871abcd2-beef-4751-950f-2402c9b81c65",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "91661d75-22c4-426b-8df1-08ad3471206c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2053,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 30000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "TestResults_Run1664230123515_firefox.html",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "TestResult-report/Run_1664230123515",
+        "reportFilename": "TestResults_Run1664230123515_firefox.html"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

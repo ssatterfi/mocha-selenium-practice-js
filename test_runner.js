@@ -1,6 +1,7 @@
 const { Builder } = require('selenium-webdriver');
 const config = require('./config.json');
 const Mocha = require('mocha');
+const Mochawesome = require('mochawesome');
 
 
 const currentDate = Date.now().toString();
@@ -31,8 +32,16 @@ let asyncForEach = async (arr, cb) => {
                 .build();
 
             // Create our Mocha instance
-            const mocha = new Mocha({
-                timeout: testCase.timeout
+            var counter = 1;
+            var mocha = new Mocha({
+                timeout: testCase.timeout,
+                reporter: 'mochawesome',
+                reporterOptions: {
+                    reportDir: `TestResult-report/Run_${currentDate}`,
+                    reportFilename: `TestResults_Run${currentDate}_${bsConfig.browserName}.html`
+                }
+
+
             });
 
             // Since tests are executed asynchronously we're going to return a Promise here.
@@ -52,11 +61,13 @@ let asyncForEach = async (arr, cb) => {
 
                 mocha.addFile(`${testCase.file}`);
 
+
                 mocha.run()
                     // Callback whenever a test fails.
                     .on('fail', test => reject(new Error(`Selenium test (${test.title}) failed.`)))
                     // When the test is over the Promise can be resolved.
                     .on('end', () => resolve());
+
 
             });
         });

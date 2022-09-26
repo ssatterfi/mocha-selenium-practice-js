@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/**/*.js --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options reportDir=TestReports/,reportFilename=Testresults.html",
-    "reg_driver": "node test_runner.js --no-timeouts --parallel --reporter mochawesome --require mochawesome/register --reporter-options reportDir=TestReports/,reportFilename=Testresults.html"
+    "reg_driver": "node test_runner.js --parallel"
   },
   "author": "",
   "license": "ISC",
