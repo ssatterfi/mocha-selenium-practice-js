@@ -1,23 +1,126 @@
 {
   "stats": {
-    "suites": 0,
-    "tests": 0,
+    "suites": 1,
+    "tests": 1,
     "passes": 0,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-09-26T16:01:08.994Z",
-    "end": "2022-09-26T16:01:09.261Z",
-    "duration": 267,
-    "testsRegistered": 0,
-    "passPercent": null,
-    "pendingPercent": null,
+    "failures": 1,
+    "start": "2022-09-26T19:31:44.886Z",
+    "end": "2022-09-26T19:31:45.241Z",
+    "duration": 355,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
     "other": 1,
     "hasOther": true,
     "skipped": 0,
     "hasSkipped": false
   },
   "results": [
-    false
+    {
+      "uuid": "77fbffba-e7be-4499-80aa-7fa3aafd7aa1",
+      "title": "",
+      "fullFile": "D:\\Repo\\javascirpt_mocha_selenium\\test\\HomePage.js",
+      "file": "\\test\\HomePage.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7c04232c-f070-497a-a797-ab7b7b7bf90d",
+          "title": "Home Page Test Suite",
+          "fullFile": "D:\\Repo\\javascirpt_mocha_selenium\\test\\HomePage.js",
+          "file": "\\test\\HomePage.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"Home Page Test Suite\"",
+              "fullTitle": "Home Page Test Suite \"before all\" hook in \"Home Page Test Suite\"",
+              "timedOut": null,
+              "duration": 0,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": null,
+              "context": null,
+              "code": "//Launch the browser\ndriver = global.driver;",
+              "err": {},
+              "uuid": "b1f4d2e3-173c-430c-a1f2-c9311bd51f3a",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook for \"TC_HomePage_001\"",
+              "fullTitle": "Home Page Test Suite \"after all\" hook for \"TC_HomePage_001\"",
+              "timedOut": null,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": null,
+              "context": null,
+              "code": "//close the browser\n        driver.quit()",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'quit')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'quit')\n    at Context.<anonymous> (test\\HomePage.js:24:16)\n    at processImmediate (node:internal/timers:466:21)",
+                "diff": null
+              },
+              "uuid": "40376bca-d840-42db-8bd2-6be67130d469",
+              "parentUUID": null,
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "TC_HomePage_001",
+              "fullTitle": "Home Page Test Suite TC_HomePage_001",
+              "timedOut": null,
+              "duration": 0,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "await driver.get(\"https://www.medishare.com/\");\n        //Validate Page Title\n        let pageTitle = await driver.getTitle();\n        try {\n            pageTitle.should.equal((PAGE_TITLE));\n        }\n        finally {\n        }",
+              "err": {
+                "message": "TypeError: Cannot read properties of undefined (reading 'get')",
+                "estack": "TypeError: Cannot read properties of undefined (reading 'get')\n    at Context.<anonymous> (test\\HomePage.js:30:22)\n    at processImmediate (node:internal/timers:466:21)",
+                "diff": null
+              },
+              "uuid": "08f0624a-77d9-4ce5-a586-1fa41a90b68f",
+              "parentUUID": null,
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "08f0624a-77d9-4ce5-a586-1fa41a90b68f"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": null
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 0
+    }
   ],
   "meta": {
     "mocha": {

@@ -1,5 +1,5 @@
 const chrome = require("selenium-webdriver/chrome");
-const env = require('../capabilities');
+const env = require('../../capabilities');
 const { Builder, By, Key, until, WebDriver, WebElement } = require('selenium-webdriver');
 const should = require("chai").should();
 var driver;
@@ -63,7 +63,7 @@ describe('Todo Test Suite 2', function () {
 
         //add a todo 
         await driver.findElement(By.id("sampletodotext"))
-            .sendKeys("Learn Python", Key.RETURN);
+            .sendKeys("Learn C#", Key.RETURN);
 
         //asserts
         let todoText = await driver.findElement(By.xpath("//li[last()]"))
@@ -74,7 +74,7 @@ describe('Todo Test Suite 2', function () {
 
         //assert using chai should
         try {
-            todoText.should.equal(("C#"));
+            todoText.should.equal(("Learn C#"));
         }
         finally {
             //continue to after block
